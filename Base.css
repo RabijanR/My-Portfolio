@@ -1,70 +1,97 @@
-/* base.css - shared styles (no flexbox) */
+/* base.css - shared styles (no flexbox)
+   - background uses background.jpg (same folder)
+   - small site avatar added (Me.jpg) shown in header
+*/
 
-/* Background texture: Background.jpg used in body background */
-html,body{
-  height:100%;
-  margin:0;
+/* Reset-ish & base */
+html, body {
+  height: 100%;
+  margin: 0;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color:#2b333b;
+  color: #2b333b;
 }
 
-/* Use the background image as the body background */
-body{
-  background-image: url('Background.jpg');
+/* Body background: uses background.jpg */
+body {
+  background-image: url('background.jpg'); /* use this file in same folder */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-  /* fallback gradient to ensure readability */
+  /* fallback color for readability */
   background-color: #0f375e;
 }
 
-/* Site container semantics */
+/* Container width helper for header/footer */
 .header-inner, .footer-inner {
   width: 92%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* Header */
+/* SITE HEADER
+   - brand includes avatar image and title (inline-block, simple to explain)
+   - no flexbox used
+*/
 .site-header {
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
   padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
+/* Brand area: contains avatar + site title */
+.brand {
+  display: inline-block;      /* horizontal flow */
+  vertical-align: middle;     /* align with nav */
+  text-decoration: none;      /* remove link underline if wrapped in <a> */
+}
+
+/* small circular avatar shown in header */
+.site-avatar {
+  width: 80px;                /* size for header use */
+  height: 80px;
+  border-radius: 50%;         /* circular */
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  object-fit: cover;          /* makes sure image fills circle */
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+/* site title (kept inline so it sits next to avatar) */
 .site-title {
   margin: 0;
   font-size: 1.4rem;
-  color:#e7f1fb;
-  display:inline-block;
-}
-
-/* simple horizontal nav (no flexbox) */
-.main-nav ul {
-  list-style:none;
-  margin:0;
-  padding:0;
-  display:inline-block;
+  color: #e7f1fb;
+  display: inline-block;
   vertical-align: middle;
 }
 
-.main-nav ul li {
-  display:inline-block;
-  margin-left:16px;
+/* Navigation: simple inline nav (no flexbox) */
+.main-nav {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 24px; /* space between brand and nav */
 }
-
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-nav ul li {
+  display: inline-block;
+  margin-left: 16px;
+}
 .main-nav a {
   color: #dbeaf7;
-  text-decoration:none;
-  font-weight:600;
+  text-decoration: none;
+  font-weight: 600;
 }
-
 .main-nav a:hover, .main-nav a:focus {
   text-decoration: underline;
 }
 
-/* Hero */
+/* HERO section: angled gradient over background for readability */
 .hero {
   margin: 30px auto;
   width: 92%;
@@ -74,82 +101,79 @@ body{
   border-radius: 8px;
   color: #eaf6ff;
 }
-
-.hero-content h2 { margin-top:0; font-size:1.8rem; }
+.hero-content h2 { margin-top: 0; font-size: 1.8rem; }
 .cta {
-  display:inline-block;
-  margin-top:12px;
+  display: inline-block;
+  margin-top: 12px;
   background: linear-gradient(135deg, #2b6ca3, #6d8ea6);
-  padding:10px 16px;
-  border-radius:6px;
-  color:white;
-  text-decoration:none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
 }
 
-/* Features / grid style (use inline-block blocks) */
-.features { width:92%; max-width:1100px; margin: 20px auto; }
+/* Features: simple inline-block cards */
+.features { width: 92%; max-width: 1100px; margin: 20px auto; }
 .feature {
   background: rgba(255,255,255,0.02);
-  padding:14px;
+  padding: 14px;
   margin: 8px;
-  border-radius:6px;
-  display:inline-block;
-  vertical-align:top;
+  border-radius: 6px;
+  display: inline-block;
+  vertical-align: top;
   width: calc(50% - 28px);
-  box-sizing:border-box;
+  box-sizing: border-box;
   color: #eaf6ff;
 }
 
-/* About */
-.about-me { width:92%; max-width:1100px; margin: 20px auto; color:#eaf6ff; }
-.about-grid { overflow:hidden; }
-.portrait { width:34%; float:left; margin-right:3%; }
-.portrait img { width:100%; height:auto; border-radius:6px; display:block; border:2px solid rgba(255,255,255,0.06); }
-.bio { width:63%; float:left; }
+/* ABOUT area */
+.about-me { width: 92%; max-width: 1100px; margin: 20px auto; color: #eaf6ff; }
+.about-grid { overflow: hidden; } /* clearfix-like behavior */
+
+/* Portrait (larger image in About page) */
+.portrait { width: 34%; float: left; margin-right: 3%; }
+.portrait img { width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid rgba(255,255,255,0.06); }
+.bio { width: 63%; float: left; }
 
 /* Projects */
-.projects-list { width:92%; max-width:1100px; margin: 20px auto; color:#eaf6ff; }
-.project { background: rgba(255,255,255,0.02); padding:12px; margin-bottom:12px; border-radius:6px; }
+.projects-list { width: 92%; max-width: 1100px; margin: 20px auto; color: #eaf6ff; }
+.project { background: rgba(255,255,255,0.02); padding: 12px; margin-bottom: 12px; border-radius: 6px; }
 
-/* Contact form */
-.contact { width:92%; max-width:700px; margin: 20px auto; color:#eaf6ff; }
-form { background: rgba(255,255,255,0.02); padding:16px; border-radius:6px; }
-.form-row { margin-bottom:12px; }
-label { display:block; font-weight:600; margin-bottom:6px; }
+/* Contact form styles */
+.contact { width: 92%; max-width: 700px; margin: 20px auto; color: #eaf6ff; }
+form { background: rgba(255,255,255,0.02); padding: 16px; border-radius: 6px; }
+.form-row { margin-bottom: 12px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
 input[type="text"], input[type="email"], input[type="tel"], textarea {
-  width:100%;
-  padding:8px;
-  border:1px solid rgba(0,0,0,0.15);
-  border-radius:4px;
-  box-sizing:border-box;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-sizing: border-box;
   background: rgba(255,255,255,0.95);
   color: #0f2433;
 }
-
 .submit-btn {
-  padding:10px 16px;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
-  background: linear-gradient(135deg,#1f77b4,#4b89a6);
-  color:white;
-  font-weight:700;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1f77b4, #4b89a6);
+  color: white;
+  font-weight: 700;
 }
 
 /* Footer */
-.site-footer { margin-top:30px; padding:16px 0; color:#dbeaf7; background: rgba(0,0,0,0.12); border-top:1px solid rgba(255,255,255,0.02); }
-.site-footer a { color:#eaf6ff; text-decoration: none; }
+.site-footer { margin-top: 30px; padding: 16px 0; color: #dbeaf7; background: rgba(0,0,0,0.12); border-top: 1px solid rgba(255,255,255,0.02); }
+.site-footer a { color: #eaf6ff; text-decoration: none; }
 
-/* Accessibility / focus */
+/* Focus outlines (accessibility) */
 a:focus, button:focus, input:focus, textarea:focus {
   outline: 3px solid rgba(200,230,255,0.3);
   outline-offset: 2px;
 }
 
-/* small utilities */
-.hint { font-size:0.9rem; opacity:0.9; margin-top:8px; }
+/* Small utility */
+.hint { font-size: 0.9rem; opacity: 0.9; margin-top: 8px; }
 
-/* fallback for older browsers */
-@media screen and (max-width: 5000px) {
-  /* nothing here—other files handle breakpoints */
-}
+/* Large-screen tweaks handled in tablet.css / desktop.css / mobile.css */

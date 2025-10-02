@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About Me — Rabijan Ragupalan</title>
 
-  <!-- CSS -->
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="mobile.css" media="screen and (max-width:599px)" />
   <link rel="stylesheet" href="tablet.css" media="screen and (min-width:600px) and (max-width:1023px)" />
   <link rel="stylesheet" href="desktop.css" media="screen and (min-width:1024px)" />
 </head>
 <body>
-  <!-- HEADER -->
   <header class="site-header">
     <div class="header-inner">
-      <h1 class="site-title">Rabijan Ragupalan</h1>
-      <nav class="main-nav">
+      <a href="index.html" class="brand" title="Home - Rabijan Ragupalan">
+        <img class="site-avatar" src="Me.jpeg" alt="Rabijan Ragupalan photo" />
+        <h1 class="site-title">Rabijan Ragupalan</h1>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" aria-current="page">About Me</a></li>
@@ -27,23 +29,21 @@
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
     <article class="about-me">
       <h2>About Me</h2>
       <div class="about-grid">
-        <!-- Photo -->
+        <!-- Larger portrait on About page (Me.jpg) -->
         <figure class="portrait">
           <img src="Me.jpg" alt="Rabijan Ragupalan" />
           <figcaption>Rabijan Ragupalan</figcaption>
         </figure>
 
-        <!-- Bio -->
         <div class="bio">
           <p>Hello! I'm Rabijan, a Networking and IT student at Ontario Tech University. I began my studies in engineering, which gave me experience in design and hands-on repair projects, before transferring into IT to focus on networking and systems.</p>
           <p>Here’s a short introduction video about me:</p>
 
-          <!-- Video -->
+          <!-- Video uses Video.mp4; poster uses background.jpg -->
           <video controls poster="on_record.png" width="100%">
             <source src="Video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -53,7 +53,6 @@
     </article>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <p>Contact: <a href="mailto:rabijan.ragupalan@ontariotechu.net">rabijan.ragupalan@ontariotechu.net</a></p>

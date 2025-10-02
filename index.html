@@ -5,18 +5,24 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Rabijan Ragupalan — Portfolio</title>
 
-  <!-- Link to CSS files -->
+  <!-- Link CSS (in same folder) -->
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="mobile.css" media="screen and (max-width:599px)" />
   <link rel="stylesheet" href="tablet.css" media="screen and (min-width:600px) and (max-width:1023px)" />
   <link rel="stylesheet" href="desktop.css" media="screen and (min-width:1024px)" />
 </head>
 <body>
-  <!-- HEADER with navigation -->
+  <!-- HEADER: brand now shows avatar image (Me.jpg) -->
   <header class="site-header">
     <div class="header-inner">
-      <h1 class="site-title">Rabijan Ragupalan</h1>
-      <nav class="main-nav">
+      <!-- Brand: avatar + name -->
+      <a href="index.html" class="brand" title="Home - Rabijan Ragupalan">
+        <img class="site-avatar" src="Me.jpeg" alt="Rabijan Ragupalan photo" />
+        <h1 class="site-title">Rabijan Ragupalan</h1>
+      </a>
+
+      <!-- Navigation links -->
+      <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
@@ -27,9 +33,7 @@
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
-    <!-- Hero / intro section -->
     <section class="hero">
       <div class="hero-content">
         <h2>Welcome to my Portfolio</h2>
@@ -38,7 +42,6 @@
       </div>
     </section>
 
-    <!-- Quick highlights -->
     <section class="features">
       <article class="feature"><h3>Networking</h3><p>Packet Tracer troubleshooting and IT projects.</p></article>
       <article class="feature"><h3>Design & 3D Modeling</h3><p>Scissor lift design and modeling (engineering year 1).</p></article>
@@ -47,7 +50,6 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <p>Contact: <a href="mailto:rabijan.ragupalan@ontariotechu.net">rabijan.ragupalan@ontariotechu.net</a></p>
