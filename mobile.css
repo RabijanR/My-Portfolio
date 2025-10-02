@@ -1,0 +1,18 @@
+/* mobile.css - mobile specific (max-width:599px) */
+
+/* make header nav compact */
+.header-inner { padding: 6px 0; }
+.site-title { font-size: 1.1rem; }
+
+/* stack features as full width */
+.feature { width: calc(100% - 28px); display:block; }
+
+.hero { padding: 16px; border-radius:6px; }
+
+.portrait { width:100%; float:none; margin:0 0 12px 0; }
+.bio { width:100%; float:none; }
+
+.projects-list .project { font-size:0.95rem; }
+
+/* form adjustments */
+form { padding:12px; }

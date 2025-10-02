@@ -1,0 +1,13 @@
+/* desktop.css - desktop / laptop (min-width:1024px) */
+
+.site-title { font-size: 1.6rem; }
+.header-inner { padding: 8px 0; }
+
+.hero { padding: 36px; border-radius:10px; }
+
+.feature { width: calc(25% - 28px); display:inline-block; }
+
+.portrait { width:30%; }
+.bio { width:66%; }
+
+.projects-list { max-width:1100px; }

@@ -1,0 +1,155 @@
+/* base.css - shared styles (no flexbox) */
+
+/* Background texture: Background.jpg used in body background */
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:#2b333b;
+}
+
+/* Use the background image as the body background */
+body{
+  background-image: url('Background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  /* fallback gradient to ensure readability */
+  background-color: #0f375e;
+}
+
+/* Site container semantics */
+.header-inner, .footer-inner {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.4rem;
+  color:#e7f1fb;
+  display:inline-block;
+}
+
+/* simple horizontal nav (no flexbox) */
+.main-nav ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:inline-block;
+  vertical-align: middle;
+}
+
+.main-nav ul li {
+  display:inline-block;
+  margin-left:16px;
+}
+
+.main-nav a {
+  color: #dbeaf7;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.main-nav a:hover, .main-nav a:focus {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  margin: 30px auto;
+  width: 92%;
+  max-width: 1100px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(3,36,64,0.6), rgba(96,116,135,0.25));
+  border-radius: 8px;
+  color: #eaf6ff;
+}
+
+.hero-content h2 { margin-top:0; font-size:1.8rem; }
+.cta {
+  display:inline-block;
+  margin-top:12px;
+  background: linear-gradient(135deg, #2b6ca3, #6d8ea6);
+  padding:10px 16px;
+  border-radius:6px;
+  color:white;
+  text-decoration:none;
+}
+
+/* Features / grid style (use inline-block blocks) */
+.features { width:92%; max-width:1100px; margin: 20px auto; }
+.feature {
+  background: rgba(255,255,255,0.02);
+  padding:14px;
+  margin: 8px;
+  border-radius:6px;
+  display:inline-block;
+  vertical-align:top;
+  width: calc(50% - 28px);
+  box-sizing:border-box;
+  color: #eaf6ff;
+}
+
+/* About */
+.about-me { width:92%; max-width:1100px; margin: 20px auto; color:#eaf6ff; }
+.about-grid { overflow:hidden; }
+.portrait { width:34%; float:left; margin-right:3%; }
+.portrait img { width:100%; height:auto; border-radius:6px; display:block; border:2px solid rgba(255,255,255,0.06); }
+.bio { width:63%; float:left; }
+
+/* Projects */
+.projects-list { width:92%; max-width:1100px; margin: 20px auto; color:#eaf6ff; }
+.project { background: rgba(255,255,255,0.02); padding:12px; margin-bottom:12px; border-radius:6px; }
+
+/* Contact form */
+.contact { width:92%; max-width:700px; margin: 20px auto; color:#eaf6ff; }
+form { background: rgba(255,255,255,0.02); padding:16px; border-radius:6px; }
+.form-row { margin-bottom:12px; }
+label { display:block; font-weight:600; margin-bottom:6px; }
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  width:100%;
+  padding:8px;
+  border:1px solid rgba(0,0,0,0.15);
+  border-radius:4px;
+  box-sizing:border-box;
+  background: rgba(255,255,255,0.95);
+  color: #0f2433;
+}
+
+.submit-btn {
+  padding:10px 16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  background: linear-gradient(135deg,#1f77b4,#4b89a6);
+  color:white;
+  font-weight:700;
+}
+
+/* Footer */
+.site-footer { margin-top:30px; padding:16px 0; color:#dbeaf7; background: rgba(0,0,0,0.12); border-top:1px solid rgba(255,255,255,0.02); }
+.site-footer a { color:#eaf6ff; text-decoration: none; }
+
+/* Accessibility / focus */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 3px solid rgba(200,230,255,0.3);
+  outline-offset: 2px;
+}
+
+/* small utilities */
+.hint { font-size:0.9rem; opacity:0.9; margin-top:8px; }
+
+/* fallback for older browsers */
+@media screen and (max-width: 5000px) {
+  /* nothing here—other files handle breakpoints */
+}
