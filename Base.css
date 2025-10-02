@@ -1,9 +1,9 @@
-/* base.css - shared styles (no flexbox)
+/* base.css - commen styles shared accross multiple pages
    - background uses background.jpg (same folder)
-   - small site avatar added (Me.jpg) shown in header
+   - small site avatar added (Me.jpeg) shown in header
 */
 
-/* Reset-ish & base */
+/* Sets default styles for the webpages */
 html, body {
   height: 100%;
   margin: 0;
@@ -13,7 +13,7 @@ html, body {
 
 /* Body background: uses background.jpg */
 body {
-  background-image: url('background.jpg'); /* use this file in same folder */
+  background-image: url('background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -22,17 +22,14 @@ body {
   background-color: #0f375e;
 }
 
-/* Container width helper for header/footer */
+/* header/footer dimensions */
 .header-inner, .footer-inner {
   width: 92%;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* SITE HEADER
-   - brand includes avatar image and title (inline-block, simple to explain)
-   - no flexbox used
-*/
+/* SITE HEADER adds gradiant to the background of the header, padding around the header, and a thin white line to show the ending of the header */
 .site-header {
   background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
   padding: 14px 0;
@@ -41,18 +38,16 @@ body {
 
 /* Brand area: contains avatar + site title */
 .brand {
-  display: inline-block;      /* horizontal flow */
-  vertical-align: middle;     /* align with nav */
+  display: inline-block;      /* makes it behave like normal text in a line */
   text-decoration: none;      /* remove link underline if wrapped in <a> */
 }
 
 /* small circular avatar shown in header */
 .site-avatar {
-  width: 80px;                /* size for header use */
+  width: 80px;                /* size for header use. adjusts the circle width and heigh */
   height: 80px;
   border-radius: 50%;         /* circular */
-  display: inline-block;
-  vertical-align: middle;
+  vertical-align: middle;    /*Alligns it with the site-title */
   margin-right: 10px;
   object-fit: cover;          /* makes sure image fills circle */
   border: 2px solid rgba(255,255,255,0.08);
@@ -63,88 +58,92 @@ body {
   margin: 0;
   font-size: 1.4rem;
   color: #e7f1fb;
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-block; /* Keeps it inlign with the avatar horizontally */
+  vertical-align: middle; /* Keeps it inlign with the avatar verticlly */
 }
 
-/* Navigation: simple inline nav (no flexbox) */
+/* Navigation: simple inline nav */
 .main-nav {
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-block; /* Keeps the navigation buttons inline with the profile */
   margin-left: 24px; /* space between brand and nav */
 }
+
+/* used as a reset to prevent any errors */
 .main-nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0; 
 }
+
+/* keeps the navigation buttons in line with the avatar and not as a list view */
 .main-nav ul li {
-  display: inline-block;
-  margin-left: 16px;
+  display: inline-block; /* prevents it from turning into a list format */
+  margin-left: 16px; /* adds spacing between the avatar */
 }
+
+/* all anchor/links elements in main-nav */
 .main-nav a {
-  color: #dbeaf7;
-  text-decoration: none;
-  font-weight: 600;
+  color: #dbeaf7; /* changes the color of the navigation text */
+  text-decoration: none; /* gets rid of the underline */
+  font-weight: 600; /* bolds the text */
 }
+
+/* makes the anchors/links in main-nav underline on hover and focus on keyboard input */
 .main-nav a:hover, .main-nav a:focus {
   text-decoration: underline;
 }
 
 /* HERO section: angled gradient over background for readability */
 .hero {
-  margin: 30px auto;
-  width: 92%;
-  max-width: 1100px;
-  padding: 30px;
-  background: linear-gradient(135deg, rgba(3,36,64,0.6), rgba(96,116,135,0.25));
+  margin: 30px auto; /* allgins the spacing top to bottom and left to right */
+  width: 92%; /* specifies the width space it takes up */
+  max-width: 1100px; /* won't take up any more space then specified */
+  background: linear-gradient(135deg, rgba(3,36,64,0.6), rgba(96,116,135,0.25)); /* gradiant from top left to bottom right */
   border-radius: 8px;
-  color: #eaf6ff;
+  color: #eaf6ff; /* color of text */
 }
 .hero-content h2 { margin-top: 0; font-size: 1.8rem; }
 .cta {
-  display: inline-block;
-  margin-top: 12px;
+  display: inline-block; /* allows it to sit next to other inline elements */
+  margin-top: 12px; 
   background: linear-gradient(135deg, #2b6ca3, #6d8ea6);
-  padding: 10px 16px;
+  padding: 10px 16px; /* adds padding top to bottom and left to right */
   border-radius: 6px;
   color: white;
   text-decoration: none;
 }
 
-/* Features: simple inline-block cards */
+/* Features: sets dimensions for feature */
 .features { width: 92%; max-width: 1100px; margin: 20px auto; }
-.feature {
+.feature { /*Adjusts the properties of each feature inside the features container */
   background: rgba(255,255,255,0.02);
-  padding: 14px;
-  margin: 8px;
+  padding: 14px; /* prevents the content from touching each other */
+  margin: 8px; /* seperates each feature from each other */
   border-radius: 6px;
-  display: inline-block;
-  vertical-align: top;
-  width: calc(50% - 28px);
-  box-sizing: border-box;
+  vertical-align: top; /* alligns the feature at the top relative to each other */
+  width: calc(50% - 28px); /* width is half its original size-28 */
+  box-sizing: border-box; /* makes sure padding and border is included in the width calculation */
   color: #eaf6ff;
 }
 
 /* ABOUT area */
-.about-me { width: 92%; max-width: 1100px; margin: 20px auto; color: #eaf6ff; }
-.about-grid { overflow: hidden; } /* clearfix-like behavior */
+.about-me { width: 92%; max-width: 1100px; margin: 20px auto; color: #eaf6ff; } /* styling for the main section of the About area */
+.about-grid { overflow: hidden; } /* makes the floating element seem like it's not floating in the perspective of the container */
 
 /* Portrait (larger image in About page) */
-.portrait { width: 34%; float: left; margin-right: 3%; }
-.portrait img { width: 100%; height: auto; border-radius: 6px; display: block; border: 2px solid rgba(255,255,255,0.06); }
-.bio { width: 63%; float: left; }
+.portrait img { width: 100%; height: auto; border-radius: 6px; border: 2px solid rgba(255,255,255,0.06); }
+.bio { margin-top: 5%; }
 
 /* Projects */
-.projects-list { width: 92%; max-width: 1100px; margin: 20px auto; color: #eaf6ff; }
-.project { background: rgba(255,255,255,0.02); padding: 12px; margin-bottom: 12px; border-radius: 6px; }
+.projects-list { width: 92%; max-width: 1100px; margin: 20px auto; color: #eaf6ff; } /* contariner for all the listed projects */
+.project { background: rgba(255,255,255,0.03); padding: 12px; margin-bottom: 12px; border-radius: 6px; } /* rgba controlls rgb as well */
 
 /* Contact form styles */
-.contact { width: 92%; max-width: 700px; margin: 20px auto; color: #eaf6ff; }
-form { background: rgba(255,255,255,0.02); padding: 16px; border-radius: 6px; }
+.contact { width: 92%; max-width: 700px; margin: 20px auto; color: #eaf6ff; } /* outter most container setting the base style */
+form { background: rgba(255,255,255,0.03); padding: 16px; border-radius: 6px; } /* adjusts the textboxes and the background of the form which is the 2nd container */
 .form-row { margin-bottom: 12px; }
-label { display: block; font-weight: 600; margin-bottom: 6px; }
-input[type="text"], input[type="email"], input[type="tel"], textarea {
+label { display: block; font-weight: 600; margin-bottom: 6px; } /* adjusts the style between each textbox block puts each label in its own line*/
+input[type="text"], input[type="email"], input[type="tel"], textarea { /*targets the textbox style */
   width: 100%;
   padding: 8px;
   border: 1px solid rgba(0,0,0,0.15);
@@ -167,7 +166,7 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 .site-footer { margin-top: 30px; padding: 16px 0; color: #dbeaf7; background: rgba(0,0,0,0.12); border-top: 1px solid rgba(255,255,255,0.02); }
 .site-footer a { color: #eaf6ff; text-decoration: none; }
 
-/* Focus outlines (accessibility) */
+/* Focus styling for when a link, button, textbox, or text area is clicked */
 a:focus, button:focus, input:focus, textarea:focus {
   outline: 3px solid rgba(200,230,255,0.3);
   outline-offset: 2px;
@@ -176,4 +175,3 @@ a:focus, button:focus, input:focus, textarea:focus {
 /* Small utility */
 .hint { font-size: 0.9rem; opacity: 0.9; margin-top: 8px; }
 
-/* Large-screen tweaks handled in tablet.css / desktop.css / mobile.css */

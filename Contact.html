@@ -1,29 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="en"> <!-- Used by search engines to understand the language the webpage is in -->
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" /> <!-- Provides metadata on how to read the text -->
+  <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- Tells mobile browsers how to handle the pages size and zoom -->
   <title>Contact Me — Rabijan Ragupalan</title>
 
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="mobile.css" media="screen and (max-width:599px)" />
+  <!-- Linking all the necessary CSS files -->
+  <link rel="stylesheet" href="base.css" /> <!-- Contains all the fonts, colour, background, and button styles while other css file focuses on overwritting the sizing based on screen size -->
+  <link rel="stylesheet" href="mobile.css" media="screen and (max-width:599px)" /> <!-- Tells the browser when to use what style sheet -->
   <link rel="stylesheet" href="tablet.css" media="screen and (min-width:600px) and (max-width:1023px)" />
   <link rel="stylesheet" href="desktop.css" media="screen and (min-width:1024px)" />
 </head>
 <body>
+  <!-- HEADER: sementic tag for the top section holding the class brand -->
   <header class="site-header">
-    <div class="header-inner">
+    <div class="header-inner"> <!-- Section of the Header -->
       <a href="index.html" class="brand" title="Home - Rabijan Ragupalan">
         <img class="site-avatar" src="Me.jpeg" alt="Rabijan Ragupalan photo" />
         <h1 class="site-title">Rabijan Ragupalan</h1>
       </a>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul>
+      <!-- Navigation links sementic tag -->
+      <nav class="main-nav">
+        <ul> <!-- Unordered List -->
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Me</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html" aria-current="page">Contact Me</a></li>
+          <li><a href="contact.html">Contact Me</a></li>
         </ul>
       </nav>
     </div>
@@ -33,10 +36,10 @@
     <section class="contact">
       <h2>Contact Me</h2>
 
-      <form>
+      <form> <!-- used to collect user input -->
         <div class="form-row">
-          <label for="name">Name:</label>
-          <input id="name" name="name" type="text" required minlength="2" />
+          <label for="name">Name:</label> <!-- A label "Name" is created for an input box with the id "name" -->
+          <input id="name" name="name" type="text" required minlength="2" /> <!--An input box with the id "name" is created where a key called "name" is sent when sumbitted and is of the type "text" -->
         </div>
 
         <div class="form-row">
@@ -46,12 +49,12 @@
 
         <div class="form-row">
           <label for="phone">Cell No.:</label>
-          <input id="phone" name="phone" type="tel" required pattern="^\+?[\d\s\-\(\)]{7,}$" />
+          <input id="phone" name="phone" type="tel" required pattern="^\+?[\d\s\-\(\)]{7,}$" /> <!-- ^ = start, \+? = optional '+', [\d\s\-\(\)] = digits, spaces, dash or parentheses, {7,} = at least 7 characters, $ = end -->
         </div>
 
         <div class="form-row">
           <label for="comments">Comments:</label>
-          <textarea id="comments" name="comments" rows="5"></textarea>
+          <textarea id="comments" name="comments" rows="5"></textarea> <!-- 5 visable lines at a time -->
         </div>
 
         <div class="form-row">

@@ -1,9 +1,7 @@
-/* tablet.css - tablet specific (600px - 1023px) */
-
 .site-title { font-size: 1.2rem; }
 .hero { padding: 22px; }
 
-.feature { width: calc(50% - 28px); }
+.feature { width: calc(50% - 28px); } /* 50%-28px to adjust for padding and margins */
 
 .portrait { width:40%; }
 .bio { width:58%; }
