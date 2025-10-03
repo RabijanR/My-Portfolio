@@ -62,21 +62,11 @@ I used semantic elements across all pages:
 
 
 
-Form & Validation
-The **Contact Me** page contains a form with the following fields:  
-- Name (required, min 2 characters)  
-- Email (required, type="email")  
-- Phone (required, pattern enforces digits, spaces, +, parentheses, dashes)  
-- Comments (optional)  
+Resources
+- https://developer.mozilla.org/en-US/docs/Web/CSS/color (for the rgba and linear Gradient)
+-https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/textarea (to get the textarea cnd runnning)
+-https://www.w3.org/WAI/standards-guidelines/aria/ (Accessibility features)
 
-
-Testing & Validation
-The following tools were used to test and validate the site:  
-- **HTML Validation:** [W3C Markup Validator](http://validator.w3.org/)  
-- **CSS Validation:** [W3C CSS Validator](http://jigsaw.w3.org/css-validator/)  
-- **Link Checker:** [W3C Link Checker](http://validator.w3.org/checklink)  
-- **Accessibility:** [WAVE Tool](http://wave.webaim.org/)  
-- **Spelling:** Checked using an online spell checker  
 
 
 GitHub Repository: https://github.com/RabijanR/My-Portfolio.git
